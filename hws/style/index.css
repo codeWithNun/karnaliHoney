@@ -1,0 +1,610 @@
+:root {
+    --primary-color: #0c3420;
+    --accent-color: #d4af37;
+    --accent-hover: #b8962e;
+    --text-dark: #1f2937;
+    --text-light: #f9fafb;
+    --bg-light: #faf9f5;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --premium-transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    --gold-glow: rgba(212, 175, 55, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Top Bar --- */
+.top-bar {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 10px 0;
+    font-size: 0.85rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.top-bar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.nepali-slogan {
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.english-slogan {
+    font-style: italic;
+    opacity: 0.9;
+    color: var(--accent-color);
+}
+
+/* --- Enhanced Header with Attractive Design --- */
+.main-header {
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+    transition: var(--premium-transition);
+    border-bottom: 2px solid var(--accent-color);
+    box-shadow: 0 8px 30px rgba(12, 52, 32, 0.04);
+}
+
+.main-header.scroll-shadow {
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 10px 40px rgba(12, 52, 32, 0.08);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Brand Identity --- */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: var(--premium-transition);
+}
+
+.logo {
+    height: 55px;
+    width: auto;
+    object-fit: contain;
+    transition: var(--premium-transition);
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.05));
+}
+
+.brand:hover .logo {
+    transform: scale(1.05) rotate(3deg);
+}
+
+.brand-name {
+    font-family: 'Marcellus', serif;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+
+.brand-name span {
+    color: var(--accent-color);
+    position: relative;
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { 
+        text-shadow: 0 0 10px var(--gold-glow);
+    }
+    50% { 
+        text-shadow: 0 0 20px var(--gold-glow);
+    }
+}
+
+/* --- Navigation Menu --- */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 10px 16px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    transition: var(--premium-transition);
+}
+
+.nav-link i {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    transition: var(--premium-transition);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 16px;
+    right: 16px;
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: var(--primary-color);
+    background: rgba(12, 52, 32, 0.04);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-link:hover i {
+    transform: translateY(-2px) scale(1.1);
+}
+
+/* --- Premium Contact Button --- */
+.nav-btn {
+    background: linear-gradient(135deg, var(--primary-color), #144d31) !important;
+    color: #ffffff !important;
+    padding: 10px 22px !important;
+    border-radius: 50px !important;
+    box-shadow: 0 4px 15px rgba(12, 52, 32, 0.2);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.nav-btn i {
+    color: var(--accent-color) !important;
+}
+
+.nav-btn::after {
+    display: none;
+}
+
+.nav-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(12, 52, 32, 0.35), 0 0 10px var(--gold-glow);
+    border-color: var(--accent-color);
+}
+
+/* --- Mobile Menu Toggle --- */
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 8px;
+    transition: var(--premium-transition);
+}
+
+.mobile-toggle:hover {
+    color: var(--accent-color);
+}
+
+/* --- Header Enhanced Effects --- */
+.brand-name span {
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { 
+        text-shadow: 0 0 10px var(--gold-glow);
+    }
+    50% { 
+        text-shadow: 0 0 20px var(--gold-glow);
+    }
+}
+
+/* Smooth underline animation on nav links */
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(to right, rgba(212, 175, 55, 0.1), transparent);
+    border-radius: 6px;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 1024px) {
+    .mobile-toggle {
+        display: block;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 88px;
+        left: -100%;
+        flex-direction: column;
+        background: #ffffff;
+        width: 100%;
+        padding: 30px;
+        box-shadow: 0 15px 30px rgba(12, 52, 32, 0.1);
+        border-bottom: 3px solid var(--accent-color);
+        transition: cubic-bezier(0.4, 0, 0.2, 1) 0.4s;
+        gap: 15px;
+    }
+    
+    .nav-menu.open {
+        left: 0;
+    }
+    
+    .nav-link {
+        width: 100%;
+        padding: 12px 20px;
+    }
+    
+    .nav-btn {
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+/* --- Dynamic Main Content Area --- */
+.content-area {
+    min-height: calc(100vh - 130px);
+    padding: 40px 0;
+    position: relative;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.simple-page {
+    padding: 70px 0;
+}
+
+.simple-page h1 {
+    font-family: 'Marcellus', serif;
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 18px;
+}
+
+.simple-page p,
+.simple-page li {
+    color: #4b5563;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.simple-page ul {
+    margin-top: 20px;
+    padding-left: 22px;
+}
+
+/* Elegant CSS Loader */
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-right-color: var(--accent-color);
+    animation: rotation 1s linear infinite;
+    display: none;
+}
+
+@keyframes rotation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* ///////////////////////////footer///////////////// */
+/* --- Premium Footer Styling --- */
+.premium-footer {
+    background: linear-gradient(135deg, #061f12, #0c3420); /* गाढा अर्गानिक हरियो */
+    color: #e5e7eb;
+    padding: 70px 0 0 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    border-top: 3px solid #d4af37; /* प्रिमियम सुनौलो बोर्डर */
+    position: relative;
+    overflow: hidden;
+}
+
+/* फुटर भित्र माहुरीको घार जस्तो हल्का ब्याकग्राउन्ड इफेक्ट (Optional) */
+.premium-footer::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+/* ग्रिड लेआउट (३ वटा कोलम मोबाइलमा आफैं एउटा बन्छ) */
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 50px;
+    padding-bottom: 50px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ब्रान्ड र लोगो टेक्स्ट */
+.footer-logo-text {
+    font-family: 'Marcellus', serif;
+    font-size: 1.8rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.footer-logo-text span {
+    color: #d4af37; /* Gold Color */
+}
+
+.footer-about-text {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: #bcbcbc;
+}
+
+/* फुटरको शीर्षक (Title) */
+.footer-title {
+    font-family: 'Marcellus', serif;
+    font-size: 1.25rem;
+    color: #ffffff;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* शीर्षकको तल सानो सुनौलो धर्को */
+.footer-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #d4af37;
+}
+
+/* लिङ्कहरूको स्टाइल र होभर इफेक्ट */
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: #bcbcbc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.footer-links a i {
+    font-size: 0.75rem;
+    color: #d4af37;
+    transition: transform 0.3s ease;
+}
+
+/* लिङ्कमा माउस लैजाँदा दायाँ सर्ने र चम्किने इफेक्ट */
+.footer-links a:hover {
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.footer-links a:hover i {
+    transform: translateX(3px);
+}
+
+/* सम्पर्क विवरण सूची */
+.footer-contact {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: #bcbcbc;
+}
+
+.footer-contact li i {
+    color: #d4af37;
+    font-size: 1.1rem;
+    width: 20px;
+}
+
+/* सामाजिक सञ्जाल आइकनहरू (Social Icons) */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.footer-socials a {
+    width: 38px;
+    height: 38px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    color: #d4af37;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-socials a:hover {
+    background: #d4af37;
+    color: #0c3420;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.3);
+}
+
+/* तलको कपीराइट पट्टी (Copyright Bar) */
+.footer-bottom {
+    background: #04160d;
+    padding: 20px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.88rem;
+    color: #888888;
+}
+
+.footer-bottom-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.crafted-by i {
+    color: #e63946; /* रातो मुटु आइकन */
+    animation: heartbeat 1.5s infinite;
+}
+
+/* मुटु धड्किने एनिमेसन (Heartbeat Animation) */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* रेस्पोन्सिभ डिजाइन (मोबाईल र ट्याब्लेटको लागि) */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .brand-info {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .premium-footer {
+        padding-top: 50px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .brand-info {
+        grid-column: span 1;
+    }
+    .footer-bottom-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+/* --- Responsive Footer Adjustments --- */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+    .brand-info {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .premium-footer {
+        padding-top: 50px;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .brand-info {
+        grid-column: span 1;
+    }
+    .footer-bottom-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .top-bar-content {
+        justify-content: center;
+        text-align: center;
+    }
+}

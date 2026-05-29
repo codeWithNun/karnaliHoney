@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products | karnali</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style/products.css">
+</head>
+
+<body>
+    <div class="products-page-wrapper">
+        <div class="products-container">
+
+            <!-- १. बायाँ पट्टि: प्रिमियम फिल्टर प्यानल (Sidebar Filter) -->
+            <aside class="filter-sidebar">
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Product Search</h3>
+                    <div class="search-box-wrapper">
+                        <input type="text" placeholder="Search honey types..." class="sidebar-search-input">
+                        <button class="search-submit-btn"><i class="fas fa-magnifying-glass"></i></button>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Filter By Price</h3>
+                    <div class="price-range-wrapper">
+                        <input type="range" min="99" max="649" value="649" class="price-slider">
+                        <div class="price-labels">
+                            <span>Min: रु99</span>
+                            <span>Max: रु649</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Categories</h3>
+                    <ul class="filter-category-list">
+                        <li><label><input type="checkbox"> Mad Honey <span>(Psychedelic)</span></label></li>
+                        <li><label><input type="checkbox"> White Honey</label></li>
+                        <li><label><input type="checkbox"> Rudhilo Honey</label></li>
+                        <li><label><input type="checkbox"> Chiuri Honey</label></li>
+                        <li><label><input type="checkbox"> Mustard Honey</label></li>
+                        <li><label><input type="checkbox"> Buckwheat Honey</label></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">Available Weight</h3>
+                    <div class="weight-tags">
+                        <span class="weight-tag active">200 gm</span>
+                        <span class="weight-tag">500 gm</span>
+                        <span class="weight-tag">1 kg</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- २. दायाँ पट्टि: उत्पादनहरूको ग्रिड (Products Grid Area) -->
+            <main class="products-grid-area">
+                <div class="catalog-header">
+                    <h2>Our Premium Honey Collection</h2>
+                    <p>Showing 7 authentic varieties from Karnali & wild cliffs</p>
+                </div>
+
+                <div class="products-grid">
+
+                    <!-- Card 1: Mad Honey Strong -->
+                    <div class="product-card psychedelic">
+                        <div class="product-badge tag-psychedelic">Psychedelic</div>
+                        <div class="product-image-box">
+                            <img src="../assets/img/pocket.png" alt="Mad Honey Strong"
+                                onerror="this.src='../assets/img/honey2.png'">
+                            <div class="card-overlay-actions">
+                                <button title="Quickview"><i class="fas fa-eye"></i></button>
+                                <button title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                                <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <h3 class="product-title">Mad Honey Strong</h3>
+                            <div class="product-price"><span class="old-price">रु649.00</span> <span
+                                    class="current-price">रु599.00</span></div>
+                            <div class="order-actions-group">
+                                <a href="https://wa.me/9779851345893?text=I%20want%20to%20order%20Mad%20Honey%20Strong"
+                                    target="_blank" class="btn-order-wa"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                                <a href="tel:+9779851345893" class="btn-order-call"><i class="fas fa-phone"></i> Call
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Chiuri Honey -->
+                    <div class="product-card">
+                        <div class="product-badge tag-organic">Non-Psychedelic</div>
+                        <div class="product-image-box">
+                            <img src="../assets/img/pocket.png" alt="Chiuri Honey"
+                                onerror="this.src='../assets/img/honey2.png'">
+                            <div class="card-overlay-actions">
+                                <button title="Quickview"><i class="fas fa-eye"></i></button>
+                                <button title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                                <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                            <h3 class="product-title">Chiuri Honey</h3>
+                            <div class="product-price"><span class="old-price">रु120.00</span> <span
+                                    class="current-price">रु99.00</span></div>
+                            <div class="order-actions-group">
+                                <a href="https://wa.me/9779851345893?text=I%20want%20to%20order%20Chiuri%20Honey"
+                                    target="_blank" class="btn-order-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <a href="tel:+9779851345893" class="btn-order-call"><i class="fas fa-phone"></i>
+                                    Call</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: White Honey -->
+                    <div class="product-card">
+                        <div class="product-badge tag-organic">Rare Collectible</div>
+                        <div class="product-image-box">
+                            <img src="../assets/img/pocket.png" alt="White Honey"
+                                onerror="this.src='../assets/img/honey2.png'">
+                            <div class="card-overlay-actions">
+                                <button title="Quickview"><i class="fas fa-eye"></i></button>
+                                <button title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                                <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star-half-stroke"></i></div>
+                            <h3 class="product-title">Premium White Honey</h3>
+                            <div class="product-price"><span class="old-price">रु149.00</span> <span
+                                    class="current-price">रु119.00</span></div>
+                            <div class="order-actions-group">
+                                <a href="https://wa.me/9779851345893?text=I%20want%20to%20order%20White%20Honey"
+                                    target="_blank" class="btn-order-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <a href="tel:+9779851345893" class="btn-order-call"><i class="fas fa-phone"></i>
+                                    Call</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Mad Honey Soft -->
+                    <div class="product-card psychedelic">
+                        <div class="product-badge tag-psychedelic">Psychedelic</div>
+                        <div class="product-image-box">
+                            <img src="../assets/img/pocket.png" alt="Mad Honey Soft"
+                                onerror="this.src='../assets/img/honey2.png'">
+                            <div class="card-overlay-actions">
+                                <button title="Quickview"><i class="fas fa-eye"></i></button>
+                                <button title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                                <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <h3 class="product-title">Mad Honey Soft</h3>
+                            <div class="product-price"><span class="old-price">रु529.00</span> <span
+                                    class="current-price">रु449.00</span></div>
+                            <div class="order-actions-group">
+                                <a href="https://wa.me/9779851345893?text=I%20want%20to%20order%20Mad%20Honey%20Soft"
+                                    target="_blank" class="btn-order-wa"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+                                <a href="tel:+9779851345893" class="btn-order-call"><i class="fas fa-phone"></i> Call
+                                    Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 5: Rudhilo Honey -->
+                    <div class="product-card">
+                        <div class="product-badge tag-organic">Non-Psychedelic</div>
+                        <div class="product-image-box">
+                            <img src="../assets/img/pocket.png" alt="Rudhilo Honey"
+                                onerror="this.src='../assets/img/honey2.png'">
+                            <div class="card-overlay-actions">
+                                <button title="Quickview"><i class="fas fa-eye"></i></button>
+                                <button title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                                <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></div>
+                            <h3 class="product-title">Rudhilo Honey</h3>
+                            <div class="product-price"><span class="old-price">रु120.00</span> <span
+                                    class="current-price">रु99.00</span></div>
+                            <div class="order-actions-group">
+                                <a href="https://wa.me/9779851345893?text=I%20want%20to%20order%20Rudhilo%20Honey"
+                                    target="_blank" class="btn-order-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <a href="tel:+9779851345893" class="btn-order-call"><i class="fas fa-phone"></i>
+                                    Call</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 6: Mustard Honey -->
+                    <div class="product-card">
+                        <div class="product-badge tag-organic">Pure Organic</div>
+                        <div class="product-image-box">
+                            <img src="../assets/img/pocket.png" alt="Mustard Honey"
+                                onerror="this.src='../assets/img/honey2.png'">
+                            <div class="card-overlay-actions">
+                                <button title="Quickview"><i class="fas fa-eye"></i></button>
+                                <button title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                                <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>
+                            <h3 class="product-title">Mustard Honey</h3>
+                            <div class="product-price"><span class="old-price">रु129.00</span> <span
+                                    class="current-price">रु99.00</span></div>
+                            <div class="order-actions-group">
+                                <a href="https://wa.me/9779851345893?text=I%20want%20to%20order%20Mustard%20Honey"
+                                    target="_blank" class="btn-order-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <a href="tel:+9779851345893" class="btn-order-call"><i class="fas fa-phone"></i>
+                                    Call</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 7: Buckwheat Honey -->
+                    <div class="product-card">
+                        <div class="product-badge tag-organic">Rich Antioxidant</div>
+                        <div class="product-image-box">
+                            <img src="../assets/img/pocket.png" alt="Buckwheat Honey"
+                                onerror="this.src='../assets/img/honey2.png'">
+                            <div class="card-overlay-actions">
+                                <button title="Quickview"><i class="fas fa-eye"></i></button>
+                                <button title="Add to Wishlist"><i class="fas fa-heart"></i></button>
+                                <button title="Compare"><i class="fas fa-arrows-rotate"></i></button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <div class="rating-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                            <h3 class="product-title">Buckwheat Honey</h3>
+                            <div class="product-price"><span class="old-price">रु149.00</span> <span
+                                    class="current-price">रु119.00</span></div>
+                            <div class="order-actions-group">
+                                <a href="https://wa.me/9779851345893?text=I%20want%20to%20order%20Buckwheat%20Honey"
+                                    target="_blank" class="btn-order-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                                <a href="tel:+9779851345893" class="btn-order-call"><i class="fas fa-phone"></i>
+                                    Call</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+        </div>
+    </div>
+</body>
+
+</html>

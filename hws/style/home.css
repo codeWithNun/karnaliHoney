@@ -1,0 +1,232 @@
+/* --- Premium Hero Master Wrapper --- */
+.premium-hero-container {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 90%;
+    padding: 60px 0;
+    overflow: hidden;
+}
+
+
+.static-honey-bg {
+    position: absolute;
+    top: 50%;
+    right: -10%;
+    
+    transform: translateY(-50%);
+    width: 50%;
+    
+    max-width: 600px;
+    z-index: 1;
+   
+    pointer-events: none; 
+    justify-content: flex-end;
+}
+
+.static-honey-bg img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+   
+    filter: drop-shadow(-20px 20px 50px rgba(12, 52, 32, 0.15));
+}
+
+
+.hero-content-layer {
+    position: relative;
+    z-index: 2;
+    
+    width: 55%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+}
+
+.premium-badge {
+    background: rgba(212, 175, 55, 0.12);
+    color: #b69234;
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.hero-brand-title {
+    font-family: 'Marcellus', serif;
+    font-size: 3.8rem;
+    color: #0c3420;
+    line-height: 1.15;
+    font-weight: 600;
+}
+
+.gold-gradient-text {
+    color: #d4af37;
+    background: linear-gradient(45deg, #b69234, #f3df95);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-short-desc {
+    font-size: 1.05rem;
+    color: #4b5563;
+    line-height: 1.8;
+}
+
+/* --- बटनहरू --- */
+.hero-action-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-gold-fill,
+.btn-outline-green {
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.btn-gold-fill {
+    background: linear-gradient(135deg, #0c3420, #144d31);
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(12, 52, 32, 0.2);
+}
+
+.btn-gold-fill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(12, 52, 32, 0.3);
+}
+
+.btn-outline-green {
+    background: transparent;
+    color: #0c3420;
+    border: 2px solid #0c3420;
+}
+
+.btn-outline-green:hover {
+    background: rgba(12, 52, 32, 0.04);
+    transform: translateY(-3px);
+}
+
+/* --- Features Layout --- */
+.premium-features-section {
+    background: #fefdfa;
+    padding: 60px 0;
+    border-top: 1px solid rgba(12, 52, 32, 0.04);
+}
+
+.features-flex-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.feature-glass-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.015);
+    border: 1px solid rgba(12, 52, 32, 0.03);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-glass-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 15px 35px rgba(12, 52, 32, 0.06);
+}
+
+.card-icon-box {
+    width: 55px;
+    height: 55px;
+    background: rgba(12, 52, 32, 0.04);
+    color: #d4af37;
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto 20px auto;
+}
+
+.feature-glass-card h3 {
+    font-family: 'Marcellus', serif;
+    color: #0c3420;
+    margin-bottom: 10px;
+}
+
+.feature-glass-card p {
+    font-size: 0.92rem;
+    color: #6b7280;
+    line-height: 1.6;
+}
+
+/* --- 100% Responsive Media Queries --- */
+@media (max-width: 1024px) {
+    .hero-brand-title {
+        font-size: 3rem;
+    }
+
+    .static-honey-bg {
+        right: -5%;
+        width: 45%;
+    }
+
+    .hero-content-layer {
+        width: 60%;
+    }
+}
+
+@media (max-width: 768px) {
+    .premium-hero-container {
+        min-height: auto;
+        padding: 40px 0;
+    }
+
+    
+    .static-honey-bg {
+        width: 70%;
+        right: -15%;
+        top: 60%;
+        opacity: 0.25;
+        
+    }
+
+    .hero-content-layer {
+        width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-brand-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-action-buttons {
+        justify-content: center;
+    }
+
+    .features-flex-box {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
