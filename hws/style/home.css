@@ -1,12 +1,12 @@
-/* --- Premium Hero Master Wrapper --- */
+
 .premium-hero-container {
     position: relative;
     min-height: 80vh;
     display: flex;
     align-items: center;
-    max-width: 1400px;
+    max-width: 1700px;
     margin: 0 auto;
-    width: 90%;
+    width: 100%;
     padding: 60px 0;
     overflow: hidden;
 }
@@ -15,12 +15,12 @@
 .static-honey-bg {
     position: absolute;
     top: 50%;
-    right: -10%;
+    right: -5%;
     
     transform: translateY(-50%);
     width: 50%;
     
-    max-width: 600px;
+    max-width: 900px;
     z-index: 1;
    
     pointer-events: none; 
