@@ -1,0 +1,288 @@
+/* --- Reset & Global Variables --- */
+:root {
+    --primary-font: 'Plus Jakarta Sans', sans-serif;
+    --display-font: 'Marcellus', serif;
+    --gold: #bca374;
+    --gold-light: #e6dac3;
+    --dark-charcoal: #111111;
+    --text-muted: #6f6f6f;
+    --bg-light: #fdfcfb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--primary-font);
+    background: radial-gradient(circle at 10% 10%, rgba(188, 163, 116, 0.06), transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(188, 163, 116, 0.04), transparent 40%),
+        var(--bg-light);
+    color: var(--dark-charcoal);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Container Layout --- */
+.gallery-wrapper {
+    max-width: 1400px;
+    /* Wider for expansive layouts */
+    margin: 0 auto;
+    padding: 100px 32px;
+}
+
+/* --- Header Section --- */
+.gallery-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.gallery-header h1 {
+    font-family: var(--display-font);
+    font-size: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.gallery-header .accent-line {
+    width: 50px;
+    height: 1px;
+    /* Thinner line for a more minimal luxury look */
+    background-color: var(--gold);
+    margin: 0 auto 28px auto;
+}
+
+.gallery-header p {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* --- Advanced Editorial Grid Layout --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* Default 4-column layout for large screens */
+    gap: 32px;
+    grid-auto-rows: 220px;
+    /* Controls row height variations */
+}
+
+/* --- Premium Editorial Layout Card Spans --- */
+/* Creating a luxury look with staggered visual hierarchy */
+.gallery-grid .gallery-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+/* Feature item */
+.gallery-grid .gallery-item:nth-child(2) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.gallery-grid .gallery-item:nth-child(5) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.gallery-grid .gallery-item:nth-child(6) {
+    grid-column: span 3;
+    grid-row: span 2;
+}
+
+/* Wide scenic landscape */
+.gallery-grid .gallery-item:nth-child(7) {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.gallery-grid .gallery-item:nth-child(10) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+/* Standard Fallbacks for item boxes */
+.gallery-item {
+    position: relative;
+    border-radius: 4px;
+    /* Subtle radius for an upscale, editorial look */
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.03);
+    background-color: #fff;
+    cursor: pointer;
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    will-change: transform;
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Cinematic Gradient Overlay */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(17, 17, 17, 0.9) 0%, rgba(17, 17, 17, 0.3) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+}
+
+/* Luxury Caption Typography Reveal */
+.gallery-item .gallery-caption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 32px;
+    z-index: 2;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.gallery-item .gallery-caption strong {
+    font-family: var(--display-font);
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    color: var(--gold-light);
+    font-weight: 400;
+}
+
+.gallery-item .gallery-caption span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* --- Interactive States --- */
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* --- Responsive Layout Breakpoints --- */
+
+/* Laptops & Tablets (3-Column Layout) */
+@media (max-width: 1100px) {
+    .gallery-wrapper {
+        padding: 80px 24px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        grid-auto-rows: 240px;
+    }
+
+    /* Re-mapping layout grids to cleanly fit 3 columns */
+    .gallery-grid .gallery-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .gallery-grid .gallery-item:nth-child(2) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .gallery-grid .gallery-item:nth-child(5) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .gallery-grid .gallery-item:nth-child(6) {
+        grid-column: span 3;
+        grid-row: span 2;
+    }
+
+    .gallery-grid .gallery-item:nth-child(7) {
+        grid-column: span 1;
+        grid-row: span 2;
+    }
+
+    .gallery-grid .gallery-item:nth-child(10) {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-header {
+        margin-bottom: 50px;
+    }
+
+    .gallery-header h1 {
+        font-size: 2.6rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        grid-auto-rows: 220px;
+    }
+
+    /* Flatten spans for uniform structure on tablet viewports */
+    .gallery-grid .gallery-item:nth-child(1),
+    .gallery-grid .gallery-item:nth-child(6),
+    .gallery-grid .gallery-item:nth-child(7) {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .gallery-grid .gallery-item:nth-child(2),
+    .gallery-grid .gallery-item:nth-child(5),
+    .gallery-grid .gallery-item:nth-child(10) {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+/* Mobile Devices (1-Column Layout) */
+@media (max-width: 480px) {
+    .gallery-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        grid-auto-rows: 260px;
+        
+    }
+
+    .gallery-grid .gallery-item {
+        grid-column: span 1 !important;
+        grid-row: span 1 !important;
+    }
+
+    .gallery-item .gallery-caption {
+        padding: 20px;
+    }
+}
